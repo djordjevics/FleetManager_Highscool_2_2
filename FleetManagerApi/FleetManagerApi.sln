@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetManagerApi", "FleetManagerApi.csproj", "{57D615C4-A5FA-4B10-A7A0-F2156ABEA95D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FleetManagerApi", "FleetManagerApi.csproj", "{57D615C4-A5FA-4B10-A7A0-F2156ABEA95D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{EB1D4278-9BA9-4FF6-9A8D-76F19E0E33E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "..\Repositories\Repositories.csproj", "{8CD6A112-A1E3-4893-8700-F830C62F4EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{57D615C4-A5FA-4B10-A7A0-F2156ABEA95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57D615C4-A5FA-4B10-A7A0-F2156ABEA95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57D615C4-A5FA-4B10-A7A0-F2156ABEA95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1D4278-9BA9-4FF6-9A8D-76F19E0E33E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1D4278-9BA9-4FF6-9A8D-76F19E0E33E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1D4278-9BA9-4FF6-9A8D-76F19E0E33E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1D4278-9BA9-4FF6-9A8D-76F19E0E33E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD6A112-A1E3-4893-8700-F830C62F4EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD6A112-A1E3-4893-8700-F830C62F4EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD6A112-A1E3-4893-8700-F830C62F4EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD6A112-A1E3-4893-8700-F830C62F4EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
