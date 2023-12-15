@@ -24,12 +24,12 @@ public class VehiclesController : ControllerBase
     [ProducesResponseType(200)]
     public IActionResult GetById(int id)
     {
-        return Ok(id);
+        return Ok(new Vehicle { Id=id, Registration="dummy"});
     }
 
     [HttpPost("Create")]
     [ProducesResponseType(200)]
-    public IActionResult Create()
+    public IActionResult Create(Vehicle v)
     {
         return Ok();
     }
