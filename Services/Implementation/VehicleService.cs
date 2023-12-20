@@ -7,6 +7,16 @@ namespace Services.Implementation
 {
     public class VehicleService : IVehicleService
     {
+        public Vehicle Create(Vehicle v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Vehicle> GetAllVehicles()
         {
             return new List<Vehicle>
@@ -23,5 +33,12 @@ namespace Services.Implementation
                 Id = id, Registration = "dummy" 
             };
         }
+
+        public Vehicle Update(Vehicle v)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }
