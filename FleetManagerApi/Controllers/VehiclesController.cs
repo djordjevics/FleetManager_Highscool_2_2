@@ -8,14 +8,19 @@ namespace FleetManagerApi.Controllers;
 [ApiController]
 public class VehiclesController : ControllerBase
 {
-    private IVehicleService service = new VehicleService();
+    private IVehicleService _vehicleService;
+
+    public VehiclesController(IVehicleService vehicleService) 
+    { 
+        _vehicleService = vehicleService; 
+    }
 
     [HttpGet("GetAll")]
     [ProducesResponseType(200)]
     [ProducesResponseType(400, Type = typeof(string))] // if we have an error, we return a message containing the error reason
     public IActionResult GetAll()
     {
-        return Ok(service.GetAllVehicles());
+        return Ok(_vehicleService.GetAllVehicles());
     }
 
     [HttpGet("GetById/{id}")]
