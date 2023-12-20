@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repositories.Models;
+using Services;
 
 namespace FleetManagerApi.Controllers;
 
@@ -7,17 +8,14 @@ namespace FleetManagerApi.Controllers;
 [ApiController]
 public class VehiclesController : ControllerBase
 {
+    private IVehicleService service = new VehicleService();
 
     [HttpGet("GetAll")]
     [ProducesResponseType(200)]
     [ProducesResponseType(400, Type = typeof(string))] // if we have an error, we return a message containing the error reason
     public IActionResult GetAll()
     {
-        return Ok(new List<Vehicle> 
-        { 
-            new Vehicle { Registration = "NS123NS" },
-            new Vehicle { Registration = "NS234BM" }
-        });
+        return Ok(service.GetAllVehicles());
     }
 
     [HttpGet("GetById/{id}")]
