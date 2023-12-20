@@ -3,7 +3,7 @@ using Repositories.Models;
 
 namespace FleetManagerApi.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class VehiclesController : ControllerBase
 {
