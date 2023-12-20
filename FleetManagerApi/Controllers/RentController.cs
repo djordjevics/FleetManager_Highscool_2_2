@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Repositories.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Services;
 
 namespace FleetManagerApi.Controllers
 {
@@ -8,24 +7,19 @@ namespace FleetManagerApi.Controllers
     [ApiController]
     public class RentController : ControllerBase
     {
+        private IRentService _rentService;
+
+        public RentController (IRentService rentService) 
+        {  
+            _rentService = rentService; 
+        }
 
         [HttpGet("GetAll")]
         [ProducesResponseType(200)]
 
         public IActionResult GetAll()
         {
-            return Ok(new List<Rent>
-            {
-                new Rent { Id = 1,
-                           DateFrom= DateTime.Now ,
-                           DateTo = new (2023, 12, 30),
-                           RentedVehicle = new Vehicle {Registration = "NS123NS" }
-                },
-                new Rent { Id = 2,
-                           DateFrom= DateTime.Now ,
-                           DateTo= new (2024, 2, 23),
-                           RentedVehicle = new Vehicle {Registration = "NS234BM" } } 
-            });
+            return Ok(_rentService.GetAllRents());
         }
 
         [HttpGet("GetByID/{ID}")]

@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Repositories.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services
 {
-    internal interface IRentService
+    public interface IRentService
     {
+        List<Rent> GetAllRents();
     }
 }

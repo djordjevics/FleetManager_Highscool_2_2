@@ -1,4 +1,6 @@
 using Services;
+using Services.Implementation;
+using Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<IVehicleService, VehicleService>();
+builder.Services.AddTransient<IRentService, IRentService>();
 
 
 
