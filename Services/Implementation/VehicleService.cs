@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Services
+namespace Services.Implementation
 {
     public class VehicleService : IVehicleService
     {
@@ -12,6 +12,14 @@ namespace Services
             {
                 new Vehicle { Registration = "NS123NS" },
                 new Vehicle { Registration = "NS234BM" }
+            };
+        }
+
+        public Vehicle GetById(int id) 
+        {
+            return new Vehicle 
+            {
+                Id = id, Registration = "dummy" 
             };
         }
     }

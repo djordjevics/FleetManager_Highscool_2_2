@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repositories.Models;
-using Services;
+using Services.Interfaces;
 
 namespace FleetManagerApi.Controllers;
 
@@ -27,7 +27,7 @@ public class VehiclesController : ControllerBase
     [ProducesResponseType(200)]
     public IActionResult GetById(int id)
     {
-        return Ok(new Vehicle { Id=id, Registration="dummy"});
+        return Ok(_vehicleService.GetById(id));
     }
 
     [HttpPost("Create")]
