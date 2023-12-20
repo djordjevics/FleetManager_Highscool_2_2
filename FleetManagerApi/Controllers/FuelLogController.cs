@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repositories.Models;
 
 namespace FleetManagerApi.Controllers;
 
@@ -6,17 +7,16 @@ namespace FleetManagerApi.Controllers;
 [ApiController]
 public class FuelLogController : ControllerBase
 {
-    List<Temp2> temp = new List<Temp2>()
-    {
-        new Temp2{id = 6, age = 5},
-        new Temp2{id = 7, age = 6}
-    };
 
     [HttpGet("GetAll")]
     [ProducesResponseType(200)]
     public IActionResult GetAll()
     {
-        return Ok();
+        return Ok(new List<FuelLog>
+        {
+            new FuelLog(1, new Vehicle() { Registration="ns118ux" }, 30),
+            new FuelLog(2, new Vehicle() { Registration="ns333us" }, 45)
+        }) ;
     }
 
     [HttpGet("GetById/{id}")]
@@ -24,7 +24,7 @@ public class FuelLogController : ControllerBase
 
     public IActionResult GetByID(int id) 
     {
-        return Ok(id);
+        return Ok(new FuelLog(id, new Vehicle { Registration = "random" }, 99));
     }
 
     [HttpGet("GetByVehicleId/{id}")]
@@ -46,10 +46,8 @@ public class FuelLogController : ControllerBase
     [HttpPut("Update")]
     [ProducesResponseType(200)]
 
-    public IActionResult Update(Temp2 obj)
+    public IActionResult Update()
     {
         return Ok();
     }
 }
-
-public class Temp2 { public int id { get; set; } public int age { get; set; } }
