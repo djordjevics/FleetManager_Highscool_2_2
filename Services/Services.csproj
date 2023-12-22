@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\FuelLogService.cs" />
-    <Compile Include="Interfaces\IFuelLog.cs" />
+    <Compile Include="Interfaces\IFuelLogService.cs" />
     <Compile Include="Interfaces\IVehicleService.cs" />
     <Compile Include="Interfaces\IRentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

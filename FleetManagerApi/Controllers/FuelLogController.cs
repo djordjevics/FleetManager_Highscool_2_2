@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repositories.Models;
+using Services;
 
 namespace FleetManagerApi.Controllers;
 
@@ -7,6 +8,12 @@ namespace FleetManagerApi.Controllers;
 [ApiController]
 public class FuelLogController : ControllerBase
 {
+    private IFuelLogService _fuelLogService;
+
+    public FuelLogController(IFuelLogService fuelLog)
+    {
+        _fuelLogService = fuelLog;
+    }
 
     [HttpGet("GetAll")]
     [ProducesResponseType(200)]
@@ -24,7 +31,7 @@ public class FuelLogController : ControllerBase
 
     public IActionResult GetByID(int id) 
     {
-        return Ok(new FuelLog(id, new Vehicle { Registration = "random" }, 99));
+        return Ok(_fuelLogService.GetById(id));
     }
 
     [HttpGet("GetByVehicleId/{id}")]
@@ -32,22 +39,22 @@ public class FuelLogController : ControllerBase
 
     public IActionResult GetByVehicleID(int id) 
     {
-        return Ok(id);
+        return Ok(_fuelLogService.GetByVehicleID(id));
     }
 
     [HttpPost("Create")]
     [ProducesResponseType(200)]
 
-    public IActionResult Create()
+    public IActionResult Create(FuelLog fuelLog)
     {
-        return Ok();
+        return Ok(_fuelLogService.Create(fuelLog));
     }
 
     [HttpPut("Update")]
     [ProducesResponseType(200)]
 
-    public IActionResult Update()
+    public IActionResult Update(FuelLog fuelLog)
     {
-        return Ok();
+        return Ok(_fuelLogService.Update(fuelLog));
     }
 }

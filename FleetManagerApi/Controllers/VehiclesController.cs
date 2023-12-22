@@ -34,7 +34,7 @@ public class VehiclesController : ControllerBase
     [ProducesResponseType(200)]
     public IActionResult Create(Vehicle v)
     {
-        return Ok();
+        return Ok(_vehicleService.Create(v));
     }
 
     [HttpDelete("Delete/{id}")]
@@ -47,9 +47,9 @@ public class VehiclesController : ControllerBase
 
     [HttpPut("Update")]
     [ProducesResponseType(200)]
-    public IActionResult Update()
+    public IActionResult Update(Vehicle v)
     {
-        return Ok();
+        return Ok(_vehicleService.Update(v));
     }
 }
 
