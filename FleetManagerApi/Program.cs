@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<IVehicleService, VehicleService>();
-builder.Services.AddTransient<IRentService, IRentService>();
+builder.Services.AddTransient<IRentService, RentService>();
 
 
 
