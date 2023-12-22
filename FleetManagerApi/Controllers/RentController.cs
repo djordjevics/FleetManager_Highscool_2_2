@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repositories.Models;
 using Services;
 
 namespace FleetManagerApi.Controllers
@@ -26,37 +27,29 @@ namespace FleetManagerApi.Controllers
         [ProducesResponseType(200)]
         public IActionResult Get(int id)
         {
-            return Ok(id);
+            return Ok(_rentService.GetRent(id));
         }
 
         [HttpGet("GetByVehicleID/{vehicleid}")]
         [ProducesResponseType(200)]
         public IActionResult GetByVehicleID(int vehicleid)
         {
-            return Ok(vehicleid);
+            return Ok(_rentService.GetRentByVehicleId(vehicleid));
         }
 
         [HttpPost("Create")]
         [ProducesResponseType(200)]
-        public IActionResult Create(Temp3 obj)
-        {
-            obj.id += 1;
-            obj.rentId += 1;
-            return Ok(obj);
+        public IActionResult Create(Rent obj)
+        { 
+            return Ok(_rentService.Create(obj));
         }
 
         [HttpPut("Update")]
         [ProducesResponseType(200)]
-        public IActionResult Update(Temp3 obj)
+        public IActionResult Update(Rent obj)
         {
-            return Ok();
+            return Ok(_rentService.Update(obj));
         }
 
     }
-}
-
-public class Temp3
-{ 
-    public int id { get; set; }
-    public int rentId { get; set; } 
 }
