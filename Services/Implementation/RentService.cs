@@ -6,6 +6,16 @@ namespace Services
 {
     public class RentService : IRentService
     {
+        public Rent Create(Rent r)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Rent> GetAllRents()
         {
             return new List<Rent>
@@ -20,6 +30,21 @@ namespace Services
                            DateTo= new DateTime (2024, 2, 23),
                            RentedVehicle = new Vehicle {Registration = "NS234BM" } }
             };
+        }
+
+        public Rent GetRent(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Rent GetRentByVehicleId(int vehicleId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Rent Update(Rent r)
+        {
+            throw new NotImplementedException();
         }
     }
 }
